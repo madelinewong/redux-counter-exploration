@@ -3,7 +3,7 @@ import "./App.css";
 import { connect } from 'react-redux';
 
 import Counter from './Counter.js';
-import { increment, decrement } from './counter/actions';
+import { incrementAction, decrementAction } from './counter/actions';
 
 const ConnectedCounter = connect(mapStateToProps, mapDispatchToProps)(Counter);
 
@@ -26,8 +26,8 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    increment: () => dispatch(increment()), 
-    decrement: () => dispatch(decrement()), 
+    increment: () => dispatch(incrementAction()), 
+    decrement: () => dispatch(decrementAction()), 
     dispatch: dispatch
   }
 }
