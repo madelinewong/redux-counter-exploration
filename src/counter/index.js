@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import * as types from './types';
+console.log('types');
 
 //inital state 
 const initalState = 0;
