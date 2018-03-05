@@ -1,18 +1,5 @@
 import { createStore } from 'redux';
-
-//inital state 
-const initalState = 0;
-//reducer (how state changes)
-const countReducer = (state=initalState, action) => {
-  switch(action.type){
-    case "INCREMENT":
-      return state + 1; 
-    case "DECREMENT": 
-      return state - 1;
-      default: 
-      return state
-  }
-};
+import countReducer from './counter/;
   //creation of the store
   const store = createStore(
     countReducer, 
