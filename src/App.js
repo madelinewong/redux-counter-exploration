@@ -13,12 +13,25 @@ import {
 const ConnectedCounter = connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = { 
+      value: 0
+    }
+    this.handleOnChange = this.handleOnChange.bind(this);
+  }
+  handleOnChange(e){
+    this.setState({
+     value: +e.target.value
+    });
+    }
   render() {
     console.log(this.props);
     return (
       <div>
-        <Counter {...this.props} />
-        <Counter {...this.props} />
+        {/* <Counter {...this.props} /> */}
+        <Counter {...this.props} {...this.state} />
+        <input type="number" value={this.state.value} onChange={this.handleOnChange}/>
       </div>
     );
   }
